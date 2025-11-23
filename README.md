@@ -2,6 +2,9 @@
 
 This project implements a simple RISC-V processor with **R+I+S** architecture and a testbench for simulation. It includes the main components: PC, register file, ALU, controller, instruction memory (IMEM), and data memory (DM).
 
+![Project Architecture](./img1.png)
+
+
 ## Project Components
 
 - **PC**: Program counter, increments each clock cycle.  

@@ -31,6 +31,8 @@ The testbench generates a **clock** and a **reset** signal, loads instructions f
 
 ## Test Program
 
+
+
 `program.txt` contains a small RISC-V program testing **ADDI, SLLI, ADD, SW, LW, SB** instructions.  
 
 The corresponding assembly code is:
@@ -40,3 +42,34 @@ addi x1,x0,0x12
 slli x1,x1,24
 addi x2,x0,0x34
 ...
+
+Usage
+
+Compile the project with GHDL:
+
+
+```asm
+ghdl -a processor.vhd
+ghdl -a pc.vhd
+ghdl -a imem.vhd
+ghdl -a regfile.vhd
+ghdl -a alu.vhd
+ghdl -a controleur.vhd
+ghdl -a imm_ext.vhd
+ghdl -a sm.vhd
+ghdl -a dm.vhd
+ghdl -a tb_processor.vhd
+ghdl -e tb_processor
+...
+
+
+
+
+Run the simulation:
+
+ghdl -r tb_processor --vcd=sim.vcd
+
+
+View waveforms with GTKWave:
+
+gtkwave sim.vcd
